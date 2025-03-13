@@ -1,0 +1,26 @@
+{
+  "name": "webapp-template",
+  "version": "1.0.0",
+  "description": "A template for Webpack-based web applications.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack serve --open",
+    "build": "webpack",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "author": "Joscha Zaremba",
+  "license": "MSI",
+  "devDependencies": {
+    "css-loader": "^6.0.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "html-webpack-plugin": "^5.0.0",
+    "prettier": "^3.5.3",
+    "style-loader": "^3.0.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0",
+    "webpack-dev-server": "^4.0.0"
+  }
+}
