@@ -14,7 +14,6 @@ const dropdownOutside = document.querySelector('.dropdown-menu-click-outside');
 
 function handleButtonClick() {
   dropdownCl.classList.toggle('show');
-  console.log('clicked');
 }
 
 buttonCl.addEventListener('click', handleButtonClick);
