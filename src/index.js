@@ -19,13 +19,17 @@ class Dropdown {
 
     window.addEventListener('click', (event) => {
       if (!this.button.contains(event.target) && !this.menu.contains(event.target)) {
-        this.toggleDropdown();
+        this.closeDropdown();
       }
     });
   }
 
   toggleDropdown() {
     this.menu.classList.toggle('show');
+  }
+
+  closeDropdown() {
+    this.menu.classList.remove('show');
   }
 }
 
