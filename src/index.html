@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
+      rel="stylesheet">
     <title>Dynamic User Interface Interactions</title>
   </head>
   <body>
@@ -35,10 +37,40 @@
           </div>
         </div>
       </div>
-      <div class="container">
+      <div class="container column-flex">
         <h3 class="container-title">This is an image carousel</h3>
+        <div class="carousel">
+          <div class="carousel-track">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Placeholder Image"
+              class="carousel-slide"
+            />
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Placeholder Image"
+              class="carousel-slide"
+            />
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Placeholder Image"
+              class="carousel-slide"
+            />
+          </div>
+          <button class="carousel-btn prev"><span class="material-symbols-outlined">
+            arrow_back_ios_new
+            </span></button>
+          <button class="carousel-btn next"><span class="material-symbols-outlined">
+            arrow_forward_ios
+            </span></button>
+            <div class="carousel-nav">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
       </div>
     </div>
+  </div>
 
     <footer>
       <p>
