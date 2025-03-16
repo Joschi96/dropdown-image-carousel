@@ -43,3 +43,5 @@ dropdowns.forEach((dropdown) => {
     new Dropdown(button, menu);
   }
 });
+
+export default Dropdown;
