@@ -14,9 +14,7 @@ body {
     display: inline-block;
 }
 
-.dropdown-menu-click,
-.dropdown-menu-hover,
-.dropdown-menu-click-outside {
+.dropdown-menu{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -29,9 +27,7 @@ body {
     display: block;
 }
 
-.dropdown-menu-click a,
-.dropdown-menu-hover a,
-.dropdown-menu-click-outside a{
+.dropdown-menu a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;

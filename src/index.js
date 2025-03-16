@@ -2,18 +2,44 @@
 import 'normalize.css';
 import './styles.css';
 
-// collect all the buttons
-const buttonCl = document.querySelector('.click');
-const buttonHover = document.querySelector('.hover');
-const buttonOutside = document.querySelector('.click-outside');
-
-// collect all dropdown menus
-const dropdownCl = document.querySelector('.dropdown-menu-click');
-const dropdownHover = document.querySelector('.dropdown-menu-hover');
-const dropdownOutside = document.querySelector('.dropdown-menu-click-outside');
-
-function handleButtonClick() {
-  dropdownCl.classList.toggle('show');
+class Dropdown {
+  constructor(buttonSelector, menuSelector) {
+    this.button = document.querySelector(buttonSelector);
+    this.menu = document.querySelector(menuSelector);
+    if (this.button && this.menu) {
+      this.init();
+    }
+  }
 }
 
-buttonCl.addEventListener('click', handleButtonClick);
+init() {
+  this.button.addEventListener('click', () => {
+    Event.stopPropagation();
+    this.toggleDropdown();
+  });
+
+  window.addEventListener('click', (event) => {
+    if (!this.button.contains(event.target) && !this.menu.contains(event.target)) {
+      this.closeDropdown();
+    }
+  });
+}
+
+toggleDropdown() {
+  this.menu.classList.toggle('show');
+}
+
+closeDropdown() {
+  this.menu.classList.remove('show');
+}
+
+//Initialize all dropdown menus
+const dropdowns = document.querySelectorAll('.dropdown');
+dropdowns.forEach((dropdown) => {
+  const button = dropdown.querySelector('.dropdown-btn.click');
+  const menu = dropdown.querySelector('.dropdown-menu-click');
+  if (button && menu) {
+    new Dropdown('.${button.classList[1]}','.${menu.classList[0]}');
+  }
+});
+
