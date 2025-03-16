@@ -48,15 +48,43 @@ body {
 .container-small {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 0px 10px;
+  width: 50%;
 }
 
 .container-title {
   text-align: center;
+  height: 50px;
 }
 
 .title {
   text-align: center;
+  border-bottom: #9c9c9c 1px solid;
+  padding: 15px 10px 30px 10px;
+  margin: 0;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ececec;
+  color: rgb(0, 0, 0);
+  height: min-content;
+  width: 100%;
+  margin: 0;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+footer a{
+  color: rgb(1, 139, 139);
+  text-decoration: none;
+}
+
+footer p{
+  margin: 0;
 }
