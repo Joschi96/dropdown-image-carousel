@@ -35,13 +35,13 @@ class ImageCarousel {
   }
 
   nextSlide() {
-    const nextIndex = this.currentIndex + 1;
-    this.goToSlide(nextIndex);
+    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+    this.goToSlide(this.currentIndex);
   }
 
   prevSlide() {
-    const prevIndex = this.currentIndex - 1;
-    this.goToSlide(prevIndex);
+    this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+    this.goToSlide(this.currentIndex);
   }
 
   goToSlide(index) {
@@ -51,6 +51,7 @@ class ImageCarousel {
     this.currentIndex = index;
     // Update the active dot
     this.updateDots();
+    this.resetAutoSlide();
   }
 
   updateDots() {
@@ -69,10 +70,23 @@ class ImageCarousel {
     }, 5000);
   }
 
-  stopAutoSlide() {
+  resetAutoSlide() {
     clearInterval(this.autoSlideInterval);
     this.startAutoSlide();
   }
 }
+
+// Initialize all carousels
+const carousels = document.querySelectorAll('.carousel');
+carousels.forEach((carousel) => {
+  const nextButton = carousel.querySelector('.next');
+  const prevButton = carousel.querySelector('.prev');
+  const track = carousel.querySelector('.carousel-track');
+  const dots = Array.from(carousel.querySelectorAll('.dot'));
+  if (nextButton && prevButton && track && dots) {
+    // eslint-disable-next-line no-new
+    new ImageCarousel(nextButton, prevButton, track, dots, carousel);
+  }
+});
 
 export default ImageCarousel;
